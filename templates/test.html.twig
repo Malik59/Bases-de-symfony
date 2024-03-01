@@ -1,0 +1,66 @@
+{% extends "./layout.html.twig" %}
+
+{% block content %}
+
+
+	{{include('./partials/_profile.html.twig') }}
+
+	<h2>
+		Name:
+		{{ product.name}}</h2>
+	<h2>
+		Name:
+		{{ product.price}}</h2>
+	<h2>
+		Name:
+		{{ product.lastUpdate | date('d/m/Y')}}
+	</h2>
+	<h2>
+		Name:
+		{{ product.lastUpdate | date('d m Y')}}
+	</h2>
+	<h2>
+		Name:
+		{{ product.lastUpdate | format_date(pattern='d MMMM Y')}}
+	</h2>
+	<h2>
+		Name:
+		{{ product.lastUpdate | format_date(pattern='d MMMM Y', locale='fr')}}
+	</h2>
+	<h2>
+		Name:
+		{{ product.lastUpdate | format_date('full', locale='fr')}}
+	</h2>
+	<h2>
+		Name:
+		{{ product.lastUpdate | format_date('short', locale='fr')}}
+	</h2>
+	<h2>
+		Name:
+		{{ product.lastUpdate | format_date('medium', locale='fr')}}
+	</h2>
+	<h2>
+		Name:
+		{{ product.lastUpdate | format_datetime('medium', locale='fr')}}
+	</h2>
+
+	<h2>{{'bonjour' | upper}}</h2>
+	<h2>{{'bonjour' | capitalize}}</h2>
+	<h2>{{h1 | raw}}</h2>
+	<h2>{{ [1, 2, 3] | join('-') }}</h2>
+	<h2>{{ [1, 2, 3] | map(a => a * 2) | join('-') }}</h2>
+
+	{% for item in [2,5,8,12,45,69,85,45,23,21,45,25,85] | filter(a => a > 20) %}
+		{{ item }}
+	{% endfor %}
+
+	<h3>
+		{{[1,2,3,4,5,6,7] | first}}
+	</h3>
+
+	<img src=" {{ asset('burger.jpg') }} " alt="">
+
+	<a href="{{ path('about') }}">Lien</a>
+
+
+{% endblock %}

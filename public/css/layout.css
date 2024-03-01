@@ -1,0 +1,9 @@
+.content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .sidebar {
+    background-color: aqua;
+  }
+  

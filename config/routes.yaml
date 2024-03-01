@@ -1,5 +1,19 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+
+index:
+  path: /
+  controller: App\Controller\DefaultController::index
+
+test2:
+  path: /test2
+  controller: App\Controller\DefaultController::test2
+
+statique:
+  path: /statique
+  controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+  defaults:
+    template: 'page_statique.html.twig'
